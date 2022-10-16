@@ -33,4 +33,5 @@
     <string name="heater">Heater</string>
     <string name="window">Window</string>
     <string name="door">Door</string>
+    <string name="adjust_shades_level">Adjust Shades Level</string>
 </resources>
