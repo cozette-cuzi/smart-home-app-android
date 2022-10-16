@@ -31,4 +31,6 @@
     <string name="off">Off</string>
     <string name="on">On</string>
     <string name="heater">Heater</string>
+    <string name="window">Window</string>
+    <string name="door">Door</string>
 </resources>
