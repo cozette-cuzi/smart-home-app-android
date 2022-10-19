@@ -1,14 +1,14 @@
 package com.example.smarthomeapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import android.app.ProgressDialog;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -17,8 +17,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
 
+public class RegisterActivity extends AppCompatActivity {
     EditText emailInput, passwordInput, passwordConfirmationInput;
     Button registerButton;
     public static final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_register);
         // TODO: Names in here have to match fields names on the layout
         emailInput = findViewById(R.id.registerEmail);
         passwordInput = findViewById(R.id.registerPassword);
@@ -47,15 +47,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+
     }
+
     private void performAuthentication() {
         String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
         String passwordConfirmation = passwordConfirmationInput.getText().toString();
 
         if(!email.matches(emailPattern)) {
-            emailInput.setError("Enter a Correct Email Form!");
-            emailInput.requestFocus();
+                emailInput.setError("Enter a Correct Email Form!");
+                emailInput.requestFocus();
         } else if (password.isEmpty() || password.length() < 6) {
             passwordInput.setError("Enter a Proper Password!");
             passwordInput.requestFocus();
@@ -75,14 +77,14 @@ public class MainActivity extends AppCompatActivity {
                                 progressDialog.dismiss();
                                 redirectToNextActivity();
                                 Toast.makeText(
-                                        MainActivity.this,
+                                        RegisterActivity.this,
                                         "Registration Succeeded",
                                         Toast.LENGTH_SHORT
                                 ).show();
                             } else {
                                 progressDialog.dismiss();
                                 Toast.makeText(
-                                        MainActivity.this,
+                                        RegisterActivity.this,
                                         ""+task.getException(),
                                         Toast.LENGTH_SHORT
                                 ).show();
@@ -94,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void redirectToNextActivity() {
         // TODO: change HeatingActivity to the HomeActivity
-        Intent intent = new Intent(MainActivity.this, HeatingActivity.class);
+        Intent intent = new Intent(RegisterActivity.this, HeatingActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

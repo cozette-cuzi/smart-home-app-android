@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="110dp"
+        android:gravity="center"
+        android:text="Create an Account"
+        android:textColor="#4D6835"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/registerEmail"
+        android:hint="Email"
+        android:textColorHint="#4D6835"
+        android:layout_marginLeft="25dp"
+        android:paddingLeft="12sp"
+        android:textColor="#4D6835"
+        android:background="@drawable/ic_backgroundbutton"
+        android:layout_marginBottom="@dimen/cardview_compat_inset_shadow"
+        android:layout_marginRight="25dp"/>
+
+    <EditText
+        android:id="@+id/registerPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="12sp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="@dimen/cardview_compat_inset_shadow"
+        android:background="@drawable/ic_backgroundbutton"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:paddingLeft="12sp"
+        android:textColor="#4D6835"
+        android:textColorHint="#4D6835" />
+
+    <EditText
+        android:id="@+id/registerPasswordConfirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="@dimen/cardview_compat_inset_shadow"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/ic_backgroundbutton"
+        android:hint="confirm password"
+        android:inputType="textPassword"
+        android:paddingLeft="12sp"
+        android:textColor="#4D6835"
+        android:textColorHint="#4D6835" />
+
+
+    <Button
+        android:id="@+id/registerAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/ic_backgroundbutton"
+        android:text="create"
+        android:textColor="#FFFFFFFF"
+        android:textStyle="bold"/>
+</LinearLayout>
